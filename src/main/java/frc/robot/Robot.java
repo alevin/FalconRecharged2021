@@ -22,17 +22,21 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
+
   private DaphneTwoContainer m_daphneTwoContainer;
   private DaphneOneContainer m_daphneOneContainer;
   private TestbedContainer m_testbedContainer;
+  private SkeletonContainer m_skeletonContainer;
 
   private SendableChooser<Command> autoChooser;
 
   public static final String DAPHNE1 = "daphne1";
   public static final String DAPHNE2 = "daphne2";
   public static final String TESTBED = "testbed";
+  public static final String SKELETON = "skeleton";
 
-  private static final String ROBOT_TYPE = DAPHNE2; // change this line to either "DAPHNE1" or "DAPHNE2" to switch between configurations.
+
+  private static final String ROBOT_TYPE = SKELETON; // change this line to either "DAPHNE1" or "DAPHNE2" to switch between configurations.
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -55,6 +59,10 @@ public class Robot extends TimedRobot {
       case TESTBED:
         m_testbedContainer = new TestbedContainer();
         m_autonomousCommand = m_testbedContainer.getAutonomousCommand();
+        break;
+      case SKELETON:
+        m_skeletonContainer = new SkeletonContainer();
+        m_autonomousCommand = m_skeletonContainer.getAutonomousCommand();
         break;
       default:
         // unexpected, will crash later
