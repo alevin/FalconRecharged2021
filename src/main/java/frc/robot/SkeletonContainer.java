@@ -13,8 +13,8 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+//import edu.wpi.first.wpilibj2.command.InstantCommand;
+//import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.commands.AutoPaths.AutoPath1;
@@ -23,7 +23,7 @@ import frc.robot.commands.swervedrive.*;
 import frc.robot.subsystems.Drive.SwerveDriveModule;
 import frc.robot.subsystems.Drive.SwerveDriveSubsystem;
 
-import frc.robot.utility.TrajectoryMaker;
+//import frc.robot.utility.TrajectoryMaker;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -71,16 +71,25 @@ public class SkeletonContainer {
   }
 
   public void configureButtonsForPowerPort() {
-    JoystickButton buttonA = new JoystickButton(mXboxController, XboxController.Button.kA.value);
-    JoystickButton buttonX = new JoystickButton(mXboxController, XboxController.Button.kX.value);
-    JoystickButton buttonB = new JoystickButton(mXboxController, XboxController.Button.kB.value);
-    JoystickButton buttonY = new JoystickButton(mXboxController, XboxController.Button.kY.value);
-    JoystickButton leftBumper = new JoystickButton(mXboxController, XboxController.Button.kBumperLeft.value);
-    JoystickButton rightBumper = new JoystickButton(mXboxController, XboxController.Button.kBumperRight.value);
+    // JoystickButton buttonA = new JoystickButton(mXboxController,
+    // XboxController.Button.kA.value);
+    // JoystickButton buttonX = new JoystickButton(mXboxController,
+    // XboxController.Button.kX.value);
+    // JoystickButton buttonB = new JoystickButton(mXboxController,
+    // XboxController.Button.kB.value);
+    // JoystickButton buttonY = new JoystickButton(mXboxController,
+    // XboxController.Button.kY.value);
+    // JoystickButton leftBumper = new JoystickButton(mXboxController,
+    // XboxController.Button.kBumperLeft.value);
+    // JoystickButton rightBumper = new JoystickButton(mXboxController,
+    // XboxController.Button.kBumperRight.value);
     JoystickButton back = new JoystickButton(mXboxController, XboxController.Button.kBack.value);
-    JoystickButton start = new JoystickButton(mXboxController, XboxController.Button.kStart.value);
-    JoystickButton stickLeft = new JoystickButton(mXboxController, XboxController.Button.kStickLeft.value);
-    JoystickButton stickRight = new JoystickButton(mXboxController, XboxController.Button.kStickRight.value);
+    // JoystickButton start = new JoystickButton(mXboxController,
+    // XboxController.Button.kStart.value);
+    // JoystickButton stickLeft = new JoystickButton(mXboxController,
+    // XboxController.Button.kStickLeft.value);
+    // JoystickButton stickRight = new JoystickButton(mXboxController,
+    // XboxController.Button.kStickRight.value);
 
     back.whileHeld(new ZeroNavX(swerveDriveSubsystem));
 
@@ -93,16 +102,23 @@ public class SkeletonContainer {
    * passing it to a {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindingsForAuto() {
-    JoystickButton buttonA = new JoystickButton(mXboxController, XboxController.Button.kA.value);
+    // JoystickButton buttonA = new JoystickButton(mXboxController,
+    // XboxController.Button.kA.value);
     JoystickButton buttonX = new JoystickButton(mXboxController, XboxController.Button.kX.value);
     JoystickButton buttonB = new JoystickButton(mXboxController, XboxController.Button.kB.value);
-    JoystickButton buttonY = new JoystickButton(mXboxController, XboxController.Button.kY.value);
-    JoystickButton leftBumper = new JoystickButton(mXboxController, XboxController.Button.kBumperLeft.value);
-    JoystickButton rightBumper = new JoystickButton(mXboxController, XboxController.Button.kBumperRight.value);
+    // JoystickButton buttonY = new JoystickButton(mXboxController,
+    // XboxController.Button.kY.value);
+    // JoystickButton leftBumper = new JoystickButton(mXboxController,
+    // XboxController.Button.kBumperLeft.value);
+    // JoystickButton rightBumper = new JoystickButton(mXboxController,
+    // XboxController.Button.kBumperRight.value);
     JoystickButton back = new JoystickButton(mXboxController, XboxController.Button.kBack.value);
-    JoystickButton start = new JoystickButton(mXboxController, XboxController.Button.kStart.value);
-    JoystickButton stickLeft = new JoystickButton(mXboxController, XboxController.Button.kStickLeft.value);
-    JoystickButton stickRight = new JoystickButton(mXboxController, XboxController.Button.kStickRight.value);
+    // JoystickButton start = new JoystickButton(mXboxController,
+    // XboxController.Button.kStart.value);
+    // JoystickButton stickLeft = new JoystickButton(mXboxController,
+    // XboxController.Button.kStickLeft.value);
+    // JoystickButton stickRight = new JoystickButton(mXboxController,
+    // XboxController.Button.kStickRight.value);
 
     /*
      * The following is an example of an inline command. No need to create a
@@ -139,13 +155,16 @@ public class SkeletonContainer {
     // Command autoCommand1 = new Autonomous(swerveDriveSubsystem,
     // path.getTrajectory(), path.getAngle(), false);
 
-    TrajectoryMaker path00 = TrajectoryHelper.createBounce00();
-    TrajectoryMaker path01 = TrajectoryHelper.createBounce01();
-    TrajectoryMaker path10 = TrajectoryHelper.createBounce10();
+    // TrajectoryMaker path00 = TrajectoryHelper.createBounce00();
+    // TrajectoryMaker path01 = TrajectoryHelper.createBounce01();
+    // TrajectoryMaker path10 = TrajectoryHelper.createBounce10();
 
-    Command autoCommand00 = new Autonomous(swerveDriveSubsystem, path00.getTrajectory(), path00.getAngle(), true);
-    Command autoCommand01 = new Autonomous(swerveDriveSubsystem, path01.getTrajectory(), path01.getAngle(), false);
-    Command autoCommand10 = new Autonomous(swerveDriveSubsystem, path10.getTrajectory(), path10.getAngle(), false);
+    // Command autoCommand00 = new Autonomous(swerveDriveSubsystem,
+    // path00.getTrajectory(), path00.getAngle(), true);
+    // Command autoCommand01 = new Autonomous(swerveDriveSubsystem,
+    // path01.getTrajectory(), path01.getAngle(), false);
+    // Command autoCommand10 = new Autonomous(swerveDriveSubsystem,
+    // path10.getTrajectory(), path10.getAngle(), false);
 
     return new AutoPath1(swerveDriveSubsystem);
   }
